@@ -1,33 +1,198 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background and text color */
 body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    font-family: "Courier New", Courier, monospace;
-    background: linear-gradient(to left bottom, #34568B ,#5a468f);
+  font-family: "Arial", sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Center the header content */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Styling for the intro text */
+.intro-text img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container for the repositories list with glowing effect */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.4);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Smoother Gradient glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.3);
   }
-  
+  25% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.3),
+      0 0 80px rgba(255, 0, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 80px rgba(0, 255, 255, 0.4),
+      0 0 100px rgba(255, 0, 255, 0.6);
+  }
+  75% {
+    box-shadow: 0 0 50px rgba(255, 255, 0, 0.5),
+      0 0 100px rgba(255, 255, 0, 0.4), 0 0 120px rgba(255, 0, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 60px rgba(0, 255, 0, 0.6), 0 0 120px rgba(255, 255, 0, 0.5),
+      0 0 150px rgba(255, 0, 255, 0.8);
+  }
+}
+
+/* Heading for the repositories section */
+.heading {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 35px;
+  color: #c4c4c4;
+}
+
+/* Style for each repository */
+.repo {
+  list-style-type: none;
+  margin: 12px 0;
+  font-size: 20px;
+}
+
+.repo a {
+  color: #659b60;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.repo a:hover {
+  color: #8cae7f;
+}
+
+.repo h4 {
+  display: inline;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
   .container {
-    margin: 0 auto;
-    background: linear-gradient(to right bottom, #34568B ,#5a468f);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    padding: 80px;
-    border-radius: 15px;
-    width: 50%;
-    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.2), 0 0 45px rgba(255, 0, 255, 0.4);
   }
-  
+
   .heading {
-    font-size: 35px;
-    font-weight: 700;
-    padding-top: 100 ;
+    font-size: 28px;
   }
-  
+
   .repo {
+    font-size: 18px;
+  }
+
+  .repo a {
     font-size: 20px;
-    font-weight: 100;
-    padding: 5px;
-    text-align: left;
   }
-  h4{
-    color: #dfe5d49b;
+
+  .repo h4 {
+    font-size: 22px;
   }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 0, 255, 0.4);
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .repo {
+    font-size: 16px;
+  }
+
+  .repo a {
+    font-size: 18px;
+  }
+
+  .repo h4 {
+    font-size: 20px;
+  }
+}
+
+/* Footer styling */
+.footer {
+  margin-top: auto; /* Ensures the footer sticks to the bottom */
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    #659b60,
+    #8cae7f
+  ); /* Gradient background */
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.footer:hover {
+  background: linear-gradient(135deg, #8cae7f, #659b60); /* Hover effect */
+}
+
+/* Footer text styles */
+.footer p {
+  margin: 1px 0;
+  font-weight: 500;
+  color: black;
+}
+
+/* Footer link styling */
+.footer p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer p a:hover {
+  color: #f1f1f1; /* Hover color for links */
+  text-decoration: underline;
+}
+
+/* For smaller devices, tweak text and padding */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+  .footer p {
+    font-size: 14px;
+  }
+}
